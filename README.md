@@ -19,7 +19,7 @@ Isto muda conforme eu avanço.
 | Repositório | Papel |
 | --- | --- |
 | [`monjolo`](https://github.com/Green-Cinnamon-Labs/monjolo) | Runtime de simulação dinâmica contínua em Rust, com adaptador OPC UA |
-| [`tep-plant`](https://github.com/Green-Cinnamon-Labs/tep-plant) | A planta TEP sobre o `monjolo` ([planta compartilhada](https://github.com/Green-Cinnamon-Labs/spec-tennessee-eastman)) |
+| [`tep-plant`](https://github.com/Green-Cinnamon-Labs/tep-plant) | A planta TEP sobre o `monjolo` ([planta compartilhada](https://github.com/Batchuka/spec-tennessee-eastman)) |
 | [`tep-optimizer`](https://github.com/Green-Cinnamon-Labs/tep-optimizer) | Otimizador de regime permanente que chama o modelo da planta como função |
 
 ## Livro
