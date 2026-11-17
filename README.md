@@ -16,11 +16,13 @@ Isto muda conforme eu avanço.
 
 ## Repositórios
 
-| Repositório | Papel |
-| --- | --- |
-| [`monjolo`](https://github.com/Green-Cinnamon-Labs/monjolo) | Runtime de simulação dinâmica contínua em Rust, com adaptador OPC UA |
-| [`tep-plant`](https://github.com/Green-Cinnamon-Labs/tep-plant) | A planta TEP sobre o `monjolo` ([planta compartilhada](https://github.com/Batchuka/spec-tennessee-eastman)) |
-| [`tep-optimizer`](https://github.com/Green-Cinnamon-Labs/tep-optimizer) | Otimizador de regime permanente que chama o modelo da planta como função |
+| Repositório                                                             | Papel                                                                                                       |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [`monjolo`](https://github.com/Green-Cinnamon-Labs/monjolo)             | Runtime de simulação dinâmica contínua em Rust, com adaptador OPC UA                                        |
+| [`tep-plant`](https://github.com/Green-Cinnamon-Labs/tep-plant)         | A planta TEP sobre o `monjolo` ([planta compartilhada](https://github.com/Batchuka/spec-tennessee-eastman)) |
+| [`tep-optimizer`](https://github.com/Green-Cinnamon-Labs/tep-optimizer) | Otimizador de regime permanente que chama o modelo da planta como função                                    |
+
+As issues ficam todas neste hub, com o repositório no título, e no [board](https://github.com/orgs/Green-Cinnamon-Labs/projects/12) (Linha = Monjolo). O jeito de trabalhar está em [`WORKFLOW.md`](WORKFLOW.md).
 
 ## Livro
 

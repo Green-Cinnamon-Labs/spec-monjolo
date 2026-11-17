@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(//c/Projetos/gclabs/monjolo/**)",
+      "Edit(//c/Projetos/gclabs/tep-plant/**)",
+      "Edit(//c/Projetos/gclabs/tep-optimizer/**)",
+      "Write(//c/Projetos/gclabs/monjolo/**)",
+      "Write(//c/Projetos/gclabs/tep-plant/**)",
+      "Write(//c/Projetos/gclabs/tep-optimizer/**)"
+    ]
+  }
+}
