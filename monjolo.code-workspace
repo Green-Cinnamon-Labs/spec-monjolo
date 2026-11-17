@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "name": "spec-monjolo (hub e livro)", "path": "." },
+    { "name": "monjolo", "path": "../monjolo" },
+    { "name": "tep-plant", "path": "../tep-plant" },
+    { "name": "tep-optimizer", "path": "../tep-optimizer" }
+  ],
+  "settings": {}
+}
