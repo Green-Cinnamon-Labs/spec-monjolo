@@ -1,0 +1,167 @@
+\chapter*{How to Read This Book}
+\addcontentsline{toc}{chapter}{How to Read This Book}
+\markboth{HOW TO READ THIS BOOK}{HOW TO READ THIS BOOK}
+
+\begin{flushright}
+\itshape Lasciate ogne fretta, voi ch'intrate.\\[2pt]
+\upshape\small not quite Dante, \emph{Inferno}, canto III
+\end{flushright}
+
+Over the gate of Hell, Dante wrote: abandon all hope, ye who enter here. This
+book asks for less: abandon all haste.
+
+This is a dense book. It is packed with names, dates, formulas, numbers and
+code, and almost every page leans on something said before it. It assumes you
+will stop, go back a few pages, check a number or run an example, and come
+back. It was written for curious people: the ones who want to know why a thing
+is the way it is, who would rather spend an evening on one page than skim
+twenty, and who are not satisfied until the idea and the history behind it both
+make sense.
+
+One project runs through the whole book: a program that simulates a chemical
+plant. It moves the plant forward in time, lets other programs read and change
+it, and answers questions about it. The plant is the Tennessee Eastman process,
+which J.\,J.~Downs and E.\,F.~Vogel, of the Eastman Chemical Company, published
+in 1993 as a challenge problem for process control.
+
+Building that program touches five fields that usually live apart, with their
+own textbooks, their own notation and their own people. The book has one part
+for each, and each part answers one question the project forces on you.
+
+The first part is about differential equations and dynamical systems, and the
+question is what the plant is. A plant is a set of quantities that change at
+rates that depend on each other, which is a system of differential equations.
+Before computing anything, you want to know how that system behaves: where it
+settles, what pushes it away, and whether it comes back.
+
+The second part is about numerical methods and algorithms: how a computer moves
+those equations forward. Almost no real system has a formula for its solution,
+so the computer takes small steps, and every step carries an error. The method
+decides whether that error stays small or swallows the answer.
+
+The third part is about software engineering: how to build the program that does
+all this and keep it standing as it grows. Design, patterns and code conventions
+came from projects that collapsed under their own weight, and a simulator
+collapses the same way.
+
+The fourth part is about optimization: once the model runs, where should the
+plant operate? Every operating point has a cost, and some are forbidden.
+Optimization finds the cheapest one that is allowed.
+
+The fifth part is about control theory: how to keep the plant there.
+Disturbances push the plant away from the point the optimizer chose, and a
+controller has to push it back without making things worse.
+
+The parts are in the order in which the questions depend on each other, but the
+chapters are written in the order the project reaches each subject. A part can
+grow while the one before it is still thin, and when a chapter needs something
+from another part, it says where to find it. None of the parts replaces a
+textbook in its field. Each one goes as far as the project needs and stops
+there.
+
+\section*{Every idea has a parent}
+
+No method in this book showed up because it was elegant. Poincaré stopped
+looking for formulas and started looking at the shape of the solutions because
+most differential equations, the three-body problem among them, have no formula
+to find. The word \emph{stiff} entered numerical analysis in 1952, when Curtiss
+and Hirschfelder found that their chemical kinetics equations forced the usual
+methods into absurdly small steps. A NATO conference put the name
+\emph{software engineering} on the table in 1968 because large programs kept
+arriving late, over budget and full of errors. Dantzig wrote the simplex method
+in 1947 because the US Air Force was planning its training, supply and
+deployment by hand. Minorsky wrote down the PID controller in 1922 after
+watching how helmsmen steer a ship. Each idea fixed something its predecessor
+got wrong and brought costs of its own. If you know the lineage, you know when
+the idea applies. If you only know the rule, you will apply it where it does not
+belong.
+
+\section*{Five kinds of boxes}
+
+Stories, concepts, questions, reflections and words are kept apart, so you
+always know which one you are reading.
+
+\begin{history}{year \textperiodcentered{} place}
+An amber box tells a story: who did it, when, and what forced the idea into
+existence. The people, the dates and the problems in it are real. No invented
+incidents.
+\end{history}
+
+\begin{concept}{name}
+A blue box defines an idea you will need again. It always ends the same way:
+
+\textbf{What it fixes:} the problem that made the idea worth having.
+
+\textbf{What it costs:} what you give up by using it.
+\end{concept}
+
+\begin{question}{the question you were embarrassed to ask}
+A teal box asks the question that occurs to anyone reading the paragraph above
+it and that nobody asks out loud, and then answers it.
+\end{question}
+
+\begin{reflection}{the thing that should bother you}
+A purple box stops on a statement that sounds absurd, or that the text just said
+in passing as if it were obvious, and works out what it means and why it is
+true.
+\end{reflection}
+
+\begin{etymology}
+A gray box says where a word comes from. The origin of a word is not its
+definition, but it often shows what the people who coined it were looking at.
+\end{etymology}
+
+The text between the boxes is the argument that connects them.
+
+\section*{Code}
+
+The examples are in Rust, and sometimes in Python. Source code sits on a light
+gray background and what a command printed sits on a dark one. Every example was
+run before it went into the book, and the output shown is the output it gave.
+
+\section*{Diagrams}
+
+Colors in diagrams are roles, not decoration. A color means the same thing in
+every figure of the book.
+
+\begin{center}
+\begin{tikzpicture}
+  \matrix[column sep=6mm, row sep=4mm, nodes={anchor=center}] {
+    \node[hf/source, minimum width=26mm] {source}; &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {what is being simulated: a plant, a model, its equations}; \\
+    \node[hf/reader, minimum width=26mm] {reader}; &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {a program that uses the model: a solver, an optimizer, a controller, a screen}; \\
+    \node[hf/store, minimum width=26mm] {store}; &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {where results are kept: a time series, a snapshot, a file}; \\
+    \node[hf/bus, minimum width=26mm] {middle}; &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {something that sits between: an adapter, a protocol, a standard}; \\
+    \draw[hf/ask] (-13mm,0) -- (13mm,0); &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {asks: a request, a call}; \\
+    \draw[hf/answer] (-13mm,0) -- (13mm,0); &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {answers a request}; \\
+    \draw[hf/push] (-13mm,0) -- (13mm,0); &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {pushes: sent without being asked}; \\
+    \draw[hf/save] (-13mm,0) -- (13mm,0); &
+    \node[hf/note, anchor=west, text width=95mm, align=left] {keeps: written to storage}; \\
+    \draw[hf/pain, dashed] (-13mm,0) -- (13mm,0); &
+    \node[hf/note, anchor=west, text width=95mm, align=left, text=hfAlert] {a cost, a pain, or something forbidden}; \\
+  };
+\end{tikzpicture}
+\end{center}
+
+\section*{Exact facts, firm opinions}
+
+This is not a scientific book, and it does not pretend to be one.
+
+The history is checked. When the book says who did something and when, that is
+what happened.
+
+The opinions are another matter. When a method survives only because the
+textbooks keep teaching it, the book says so. When a design pattern adds
+nothing, the book says it adds nothing, not that it is ``of limited value in
+some contexts''. Sometimes that will be unfair or imprecise, and we accept that.
+
+A reader who leaves with a position can argue with it, refine it, or throw it
+away. A reader who leaves with ``it depends'' has nothing to hold. Between being
+precise and leaving you with a position, this book prefers to give you a
+position.
